@@ -1,5 +1,5 @@
-/* ============================================================================
-   BOOKS — ROKOMARI AFFILIATE CATALOG
+﻿/* ============================================================================
+   BOOKS â€” ROKOMARI AFFILIATE CATALOG
    ============================================================================
    Book cover images are stored in assets/products/.
    Add new books to the BOOKS array to display them on the homepage and books.html.
@@ -27,7 +27,7 @@ const BOOKS = [
     number: "03",
     title: "Misir Ali Samagra 1",
     url: "https://rkmri.co/30eeeTReIeyR/",
-    image: "assets/products/book-03.jpg",
+    image: "assets/products/book-03.webp",
     coverStyle: "03"
   }
 ];
