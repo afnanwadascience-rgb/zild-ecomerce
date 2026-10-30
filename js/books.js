@@ -1,5 +1,6 @@
-﻿/* ============================================================================
-   BOOKS â€” ROKOMARI AFFILIATE CATALOG
+﻿
+/* ============================================================================
+   BOOKS — ROKOMARI AFFILIATE CATALOG
    ============================================================================
    Book cover images are stored in assets/products/.
    Add new books to the BOOKS array to display them on the homepage and books.html.
@@ -29,6 +30,14 @@ const BOOKS = [
     url: "https://rkmri.co/30eeeTReIeyR/",
     image: "assets/products/book-03.webp",
     coverStyle: "03"
+  },
+  {
+    id: "book-04",
+    number: "04",
+    title: "Shunno",
+    url: "https://rkmri.co/AM2MIeATIR00/",
+    image: "assets/products/book-04.webp",
+    coverStyle: "04"
   }
 ];
 
