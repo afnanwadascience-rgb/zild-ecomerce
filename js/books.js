@@ -36,7 +36,7 @@ const BOOKS = [
     number: "04",
     title: "Shunno",
     url: "https://rkmri.co/AM2MIeATIR00/",
-    image: "assets/products/book-04.webp",
+    image: "assets/products/book-04.gif",
     coverStyle: "04"
   }
 ];
