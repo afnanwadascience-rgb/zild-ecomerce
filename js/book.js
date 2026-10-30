@@ -1,5 +1,5 @@
-/* ============================================================================
-   BOOKS — ROKOMARI AFFILIATE CATALOG
+﻿/* ============================================================================
+   BOOKS â€” ROKOMARI AFFILIATE CATALOG
    ---------------------------------------------------------------------------
    To add a book, copy one object and update id, title, url, and optionally image.
    Keep image as "" until you have a cover photo. Use a path such as
@@ -89,3 +89,4 @@ const BOOKS = [
     bootBooks();
   }
 })();
+
