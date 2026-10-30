@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------------
    To add a book, copy one object and update id, title, url, and optionally image.
    Keep image as "" until you have a cover photo. Use a path such as
-   "assets/books/book-04.jpg" when you add one. New entries appear automatically
+   "assets/books/book-04.gif" when you add one. New entries appear automatically
    on both the Home page and books.html.
    ============================================================================ */
 
@@ -89,4 +89,5 @@ const BOOKS = [
     bootBooks();
   }
 })();
+
 
