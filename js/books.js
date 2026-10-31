@@ -1,9 +1,5 @@
-﻿
-/* ============================================================================
-   BOOKS — ROKOMARI AFFILIATE CATALOG
-   ============================================================================
-   Book cover images are stored in assets/products/.
-   Add new books to the BOOKS array to display them on the homepage and books.html.
+﻿/* ============================================================================
+   ZILD — ROKOMARI AFFILIATE BOOK CATALOG
    ============================================================================ */
 
 const BOOKS = [
@@ -38,6 +34,22 @@ const BOOKS = [
     url: "https://rkmri.co/AM2MIeATIR00/",
     image: "assets/products/book-04.gif",
     coverStyle: "04"
+  },
+  {
+    id: "book-05",
+    number: "05",
+    title: "Think and Grow Rich",
+    url: "https://rkmri.co/R2M0EoyeSmAA/",
+    image: "assets/products/book-05.webp",
+    coverStyle: "05"
+  },
+  {
+    id: "book-06",
+    number: "06",
+    title: "Student Hacks",
+    url: "https://rkmri.co/5N2IpMp00Roe/",
+    image: "assets/products/book-06.webp",
+    coverStyle: "06"
   }
 ];
 
@@ -53,24 +65,19 @@ const BOOKS = [
       .replace(/'/g, "&#39;");
   }
 
-  function normalizeAsset(path) {
-    return String(path || "").replace(/^\/+/, "");
-  }
-
   function cardHtml(book) {
     const cover = book.image
       ? '<div class="book-card__cover">' +
-          '<img src="' + escapeHtml(normalizeAsset(book.image)) +
+          '<img src="' + escapeHtml(book.image) +
           '" alt="Cover of ' + escapeHtml(book.title) +
           '" loading="lazy" decoding="async" ' +
           'onerror="this.style.display=\'none\';this.parentElement.classList.add(\'book-card__cover--missing\');">' +
         '</div>'
       : '<div class="book-card__cover book-card__cover--' +
           escapeHtml(book.coverStyle || "01") +
-          '" aria-label="Book cover image not added yet">' +
+          '">' +
           '<span class="book-cover__eyebrow">ROKOMARI BOOK</span>' +
           '<span class="book-cover__number">' + escapeHtml(book.number) + '</span>' +
-          '<span class="book-cover__placeholder">Cover image<br>will be added</span>' +
         '</div>';
 
     return '<article class="book-card">' +
@@ -108,8 +115,7 @@ const BOOKS = [
     const count = document.getElementById("books-count");
 
     if (count) {
-      count.textContent =
-        BOOKS.length + (BOOKS.length === 1 ? " book" : " books");
+      count.textContent = BOOKS.length + " books";
     }
   }
 
