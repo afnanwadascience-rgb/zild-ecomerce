@@ -1,165 +1,155 @@
+
 /* ==========================================================================
    ZILD — FEATURED ATTAR SECTION
-   Homepage affiliate product
    ========================================================================== */
 
-.attar-section {
-  background: #f8f8f7;
+.attar-feature {
+  background: var(--paper-warm);
   border-block: 1px solid var(--line);
 }
 
-.attar-card {
+.attar-feature__panel {
   display: grid;
-  grid-template-columns: 1fr;
-  background: #111;
-  color: #fff;
-  overflow: hidden;
-  border-radius: 3px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+  max-width: 1060px;
+  margin-inline: auto;
+  padding: clamp(18px, 4vw, 42px);
+  background: var(--paper);
+  border: 1px solid var(--line);
 }
 
-.attar-image {
+.attar-feature__visual {
   min-width: 0;
-  background: #17120e;
+}
+
+.attar-feature__image-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 430px;
+  min-height: 280px;
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
   overflow: hidden;
+  background: #eee9df;
+  border: 1px solid var(--line);
 }
 
-.attar-image a {
-  display: block;
-  height: 100%;
-}
-
-.attar-image img {
+.attar-feature__image {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 300px;
-  max-height: 480px;
+  max-height: 520px;
   object-fit: contain;
-  transition: transform 0.5s ease;
 }
 
-.attar-image:hover img {
-  transform: scale(1.04);
+.attar-feature__image-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  place-content: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  color: #f7f1e7;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(172, 132, 72, 0.32),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #252019, #090909 72%);
 }
 
-.attar-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 32px 24px;
-  gap: 16px;
+.attar-feature__image-link.is-missing
+.attar-feature__image-fallback {
+  display: grid;
 }
 
-.attar-content .eyebrow {
-  color: #d5ad64;
-  margin-bottom: 0;
-}
-
-.attar-content h2 {
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  line-height: 1.2;
-  color: #e5c17b;
-}
-
-.attar-subtitle {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #f1d8a6;
-  line-height: 1.6;
-}
-
-.attar-description {
-  color: #c5c5c5;
-  max-width: 48ch;
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-.attar-size {
-  color: #e5c17b;
-  font-size: 0.75rem;
+.attar-feature__fallback-brand {
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.34em;
 }
 
-.attar-button {
+.attar-feature__fallback-name {
+  font-size: clamp(1.6rem, 5vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+}
+
+.attar-feature__fallback-size {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.attar-feature__content {
+  max-width: 520px;
+}
+
+.attar-feature__title {
+  max-width: 15ch;
+  margin-bottom: 16px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.attar-feature__description {
+  max-width: 52ch;
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+
+.attar-feature__note {
+  margin-top: 18px;
+  color: var(--gray-500);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.attar-feature__button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: #c69a50;
-  border: 1px solid #c69a50;
-  color: #111;
-  min-width: 170px;
-  min-height: 50px;
-  padding: 0 26px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  gap: 18px;
+  margin-top: 24px;
 }
 
-.attar-button:hover {
-  background: #e0b96f;
-  border-color: #e0b96f;
-  color: #111;
-  transform: translateY(-2px);
-}
-
-.attar-note {
-  font-size: 0.75rem;
-  color: #999;
+.attar-feature__disclosure {
+  margin-top: 16px;
+  color: var(--gray-500);
+  font-size: 0.72rem;
   line-height: 1.6;
 }
 
-/* Tablet and desktop */
-
-@media (min-width: 768px) {
-  .attar-card {
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-  }
-
-  .attar-content {
-    padding: 48px;
-  }
-
-  .attar-image img {
-    min-height: 420px;
+/* Desktop layout */
+@media (min-width: 760px) {
+  .attar-feature__panel {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+    gap: clamp(32px, 6vw, 76px);
   }
 }
 
-/* Small mobile screens */
-
-@media (max-width: 380px) {
-  .attar-content {
-    padding: 26px 18px;
+/* Mobile layout */
+@media (max-width: 479px) {
+  .attar-feature__panel {
+    padding: 14px;
   }
 
-  .attar-content h2 {
-    font-size: 1.5rem;
+  .attar-feature__image-link {
+    min-height: 230px;
   }
 
-  .attar-button {
+  .attar-feature__button {
     width: 100%;
-  }
-}
-
-/* Reduced motion accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .attar-image img,
-  .attar-button {
-    transition: none;
-  }
-
-  .attar-image:hover img {
-    transform: none;
+    justify-content: center;
   }
 }
