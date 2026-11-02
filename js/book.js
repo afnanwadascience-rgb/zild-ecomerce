@@ -1,37 +1,18 @@
 ﻿/* ============================================================================
-   BOOKS â€” ROKOMARI AFFILIATE CATALOG
-   ---------------------------------------------------------------------------
-   To add a book, copy one object and update id, title, url, and optionally image.
-   Keep image as "" until you have a cover photo. Use a path such as
-   "assets/books/book-04.gif" when you add one. New entries appear automatically
-   on both the Home page and books.html.
+   ZILD — ROKOMARI AFFILIATE CATALOG
+   Books + Products | Fixed Images
    ============================================================================ */
 
 const BOOKS = [
-  {
-    id: "book-01",
-    number: "01",
-    title: "Englishe Durbolder Jonno English Therapy",
-    url: "https://rkmri.co/eoeTNpIeemRm/",
-    image: "",
-    coverStyle: "01"
-  },
-  {
-    id: "book-02",
-    number: "02",
-    title: "Ghore Boshe Spoken English",
-    url: "https://rkmri.co/NSyeoETN5mM5/",
-    image: "",
-    coverStyle: "02"
-  },
-  {
-    id: "book-03",
-    number: "03",
-    title: "Misir Ali Samagra 1",
-    url: "https://rkmri.co/30eeeTReIeyR/",
-    image: "",
-    coverStyle: "03"
-  }
+  { id:"book-01", number:"01", title:"Englishe Durbolder Jonno English Therapy", url:"https://rkmri.co/eoeTNpIeemRm/", image:"assets/products/book-01.jpg", coverStyle:"01", category:"BOOK" },
+  { id:"book-02", number:"02", title:"Ghore Boshe Spoken English", url:"https://rkmri.co/NSyeoETN5mM5/", image:"assets/products/book-02.webp", coverStyle:"02", category:"BOOK" },
+  { id:"book-03", number:"03", title:"Misir Ali Samagra 1", url:"https://rkmri.co/30eeeTReIeyR/", image:"assets/products/book-03.webp", coverStyle:"03", category:"BOOK" },
+  { id:"book-04", number:"04", title:"Shunno", url:"https://rkmri.co/AM2MIeATIR00/", image:"assets/products/book-04.gif", coverStyle:"04", category:"BOOK" },
+  { id:"book-05", number:"05", title:"Think and Grow Rich", url:"https://rkmri.co/R2M0EoyeSmAA/", image:"assets/products/book-05.webp", coverStyle:"05", category:"BOOK" },
+  { id:"book-06", number:"06", title:"Student Hacks", url:"https://rkmri.co/5N2IpMp00Roe/", image:"assets/products/book-06.webp", coverStyle:"06", category:"BOOK" },
+  { id:"book-07", number:"07", title:"Deyal - Humayun Ahmed", url:"https://rkmri.co/3TM0RoT3m025/", image:"assets/products/book-07.jpg", coverStyle:"07", category:"BOOK" },
+  { id:"product-08", number:"08", title:"OnePlus Bullets 3.5mm Jack V2 Earphones - Black", url:"https://rkmri.co/R5NoEeEAmeRe/", image:"assets/products/product-08.jpg", coverStyle:"08", category:"PRODUCT" },
+  { id:"book-09", number:"09", title:"Muhammad SM er Jiboni - Ar-Rahikul Makhtum", url:"https://rkmri.co/AMepN52ImeMo/", image:"assets/products/book-09.jpg", coverStyle:"09", category:"BOOK" }
 ];
 
 (function () {
@@ -39,37 +20,40 @@ const BOOKS = [
 
   function escapeHtml(value) {
     return String(value == null ? "" : value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
 
-  function normalizeAsset(path) {
-    return String(path || "").replace(/^\/+/, "");
-  }
-
   function cardHtml(book) {
-    const cover = book.image
-      ? '<div class="book-card__cover"><img src="' + escapeHtml(normalizeAsset(book.image)) + '" alt="Cover of ' + escapeHtml(book.title) + '" loading="lazy" decoding="async"></div>'
-      : '<div class="book-card__cover book-card__cover--' + escapeHtml(book.coverStyle || "01") + '" aria-label="Book cover image not added yet"><span class="book-cover__eyebrow">ROKOMARI BOOK</span><span class="book-cover__number">' + escapeHtml(book.number) + '</span><span class="book-cover__placeholder">Cover image<br>will be added</span></div>';
+    const cover = '<div class="book-card__cover">' +
+      '<img src="' + escapeHtml(book.image) +
+      '" alt="' + escapeHtml(book.title) +
+      '" loading="lazy" decoding="async" ' +
+      'onerror="this.onerror=null;this.parentElement.classList.add(\'book-card__cover--missing\');this.style.display=\'none\';this.parentElement.innerHTML=\'<span class=&quot;book-cover__eyebrow&quot;>ZILD ' +
+      escapeHtml(book.category) +
+      '</span><span class=&quot;book-cover__number&quot;>' +
+      escapeHtml(book.number) +
+      '</span><span class=&quot;book-cover__fallback-title&quot;>' +
+      escapeHtml(book.title) +
+      '</span>\';">' +
+      '</div>';
 
-    return '<article class="book-card">' +
-      cover +
+    return '<article class="book-card">' + cover +
       '<div class="book-card__body">' +
-        '<p class="book-card__label">BOOK ' + escapeHtml(book.number) + '</p>' +
-        '<h3 class="book-card__title">' + escapeHtml(book.title) + '</h3>' +
-        '<p class="book-card__description">View the book details and current availability on Rokomari.</p>' +
-        '<div class="book-card__actions"><a class="btn btn--dark btn--sm btn--block" href="' + escapeHtml(book.url) + '" target="_blank" rel="sponsored noopener noreferrer">VIEW ON ROKOMARI</a></div>' +
-      '</div>' +
-    '</article>';
+      '<p class="book-card__label">' + escapeHtml(book.category) + ' ' + escapeHtml(book.number) + '</p>' +
+      '<h3 class="book-card__title">' + escapeHtml(book.title) + '</h3>' +
+      '<p class="book-card__description">View product details and current availability on Rokomari.</p>' +
+      '<div class="book-card__actions">' +
+      '<a class="btn btn--dark btn--sm btn--block" href="' + escapeHtml(book.url) +
+      '" target="_blank" rel="sponsored noopener noreferrer">VIEW ON ROKOMARI</a>' +
+      '</div></div></article>';
   }
 
   function renderBooks(grid) {
     if (!grid) return;
     const section = grid.closest("[data-books-section]");
-    if (!Array.isArray(BOOKS) || BOOKS.length === 0) {
+    if (!BOOKS.length) {
       if (section) section.hidden = true;
       return;
     }
@@ -80,7 +64,7 @@ const BOOKS = [
     renderBooks(document.getElementById("home-books-grid"));
     renderBooks(document.getElementById("books-grid"));
     const count = document.getElementById("books-count");
-    if (count) count.textContent = BOOKS.length + (BOOKS.length === 1 ? " book" : " books");
+    if (count) count.textContent = BOOKS.length + " books & products";
   }
 
   if (document.readyState === "loading") {
@@ -89,6 +73,3 @@ const BOOKS = [
     bootBooks();
   }
 })();
-
-
-
