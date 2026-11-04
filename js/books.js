@@ -67,6 +67,48 @@ const BOOKS = [
     url: "https://rkmri.co/AMepN52ImeMo/",
     image: "assets/products/book-09.jpg",
     coverStyle: "09", category: "BOOK"
+  },
+    {
+    id: "book-10", number: "10",
+    title: "মেথো পথের বাঁকে হারানো পথ",
+    url: "https://rkmri.co/MeyRSlMTMM0y/",
+    image: "assets/products/book-10.jpg",
+    coverStyle: "10", category: "BOOK"
+  },
+  {
+    id: "book-11", number: "11",
+    title: "Bitcoin Billionaires",
+    url: "https://rkmri.co/ey0535NeENe5/",
+    image: "assets/products/book-11.jpg",
+    coverStyle: "11", category: "BOOK"
+  },
+  {
+    id: "book-12", number: "12",
+    title: "Educated",
+    url: "https://rkmri.co/ARl2lTMTee3T/",
+    image: "assets/products/book-12.jpg",
+    coverStyle: "12", category: "BOOK"
+  },
+  {
+    id: "book-13", number: "13",
+    title: "The Psychology of Money",
+    url: "https://rkmri.co/S3AA3oopEMTo/",
+    image: "assets/products/book-13.jpg",
+    coverStyle: "13", category: "BOOK"
+  },
+  {
+    id: "book-14", number: "14",
+    title: "Elon Musk",
+    url: "https://rkmri.co/33R3pM5M50No/",
+    image: "assets/products/book-14.jpg",
+    coverStyle: "14", category: "BOOK"
+  },
+  {
+    id: "book-15", number: "15",
+    title: "The 4-Hour Work Week",
+    url: "https://rkmri.co/NRlT2TSmem5m/",
+    image: "assets/products/book-15.jpg",
+    coverStyle: "15", category: "BOOK"
   }
 ];
 
