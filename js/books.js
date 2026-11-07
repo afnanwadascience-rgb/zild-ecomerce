@@ -109,7 +109,30 @@ const BOOKS = [
     url: "https://rkmri.co/NRlT2TSmem5m/",
     image: "assets/products/book-15.jpg",
     coverStyle: "15", category: "BOOK"
+  },
+
+  {
+    id: "book-16", number: "16",
+    title: "দ্য সিক্রেট ওয়ার",
+    url: "https://rkmri.co/AIymeemE5A00/",
+    image: "assets/products/book-16.jpg",
+    coverStyle: "16", category: "BOOK"
+  },
+  {
+    id: "book-17", number: "17",
+    title: "মার্ডার আন্ডার দ্য শুটিং স্টার",
+    url: "https://rkmri.co/AIepAAMR2T3M/",
+    image: "assets/products/book-17.jpg",
+    coverStyle: "17", category: "BOOK"
+  },
+  {
+    id: "book-18", number: "18",
+    title: "দ্য কিলিং মিশন",
+    url: "https://rkmri.co/EN0pMeR33e2A/",
+    image: "assets/products/book-18.jpg",
+    coverStyle: "18", category: "BOOK"
   }
+
 ];
 
 (function () {
